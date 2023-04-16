@@ -1,0 +1,4 @@
+
+{% for student in all_students_list %}
+    <li><a href="/grades/{{ student.id }}/">{{ student.name }}</a></li>
+{% endfor %}

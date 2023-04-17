@@ -4,7 +4,7 @@ from django.template import loader
 
 from .models import Student
 
-def studentsList(request):
+def students_list(request):
     all_students_list = Student.objects.all()
     template = loader.get_template("grades/studentsList.html")
     context = {
@@ -13,10 +13,10 @@ def studentsList(request):
     return HttpResponse(template.render(context, request))
 
 
-def studentSubjects(request, student_id=None):
+def student_subjects(request, student_id=None):
     return HttpResponse(f"this are the student {student_id} subjects" )
 
-def subjectAssignments(request, student_id, subject_id, grades_id=None):
+def subject_assignments(request, student_id, subject_id, grades_id=None):
     return HttpResponse(f"this is {subject_id} assignments {grades_id} of {student_id} ")
 
 
